@@ -14,7 +14,7 @@ import * as fromContainers from './containers';
 
 export const ROUTES: Routes = [
   {
-    path: '',
+    path: 'workouts',
     component: fromContainers.WorkoutsComponent
   }
 ];
