@@ -1,0 +1,75 @@
+{
+	"/api/v1/workouts": {
+		"get": [
+			{
+				"id": 1,
+				"name": "ANIMAL 5x5",
+				"description": "Some kind of workout",
+				"days": [
+					{
+						"id": 1,
+						"name": "Upper Body Day",
+						"exerciseItems": [
+							{
+								"id": 1,
+								"exercise": "Bench Press",
+								"sets": 5,
+								"reps": 5,
+								"groupNo": 0
+							},
+							{
+								"id": 2,
+								"exercise": "Incline Bench Press",
+								"sets": 5,
+								"reps": 5,
+								"groupNo": 1
+							},
+							{
+								"id": 3,
+								"exercise": "Decline Bench Press",
+								"sets": 5,
+								"reps": 5,
+								"groupNo": 2
+							}
+						]
+					},
+					{
+						"id": 2,
+						"name": "Lower Body Day",
+						"exerciseItems": [
+							{
+								"id": 1,
+								"exercise": "Leg Press",
+								"sets": 5,
+								"reps": 5,
+								"groupNo": 0
+							},
+							{
+								"id": 2,
+								"exercise": "Incline Leg Press",
+								"sets": 5,
+								"reps": 5,
+								"groupNo": 1
+							},
+							{
+								"id": 3,
+								"exercise": "Decline Leg Press",
+								"sets": 5,
+								"reps": 5,
+								"groupNo": 2
+							}
+						]
+					}
+				]
+			}
+		],
+		"post": {
+			"data": [
+				{
+					"id": 1,
+					"name": "Steve French"
+				}
+			]
+		}
+	}
+}

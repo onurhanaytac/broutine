@@ -1,0 +1,7 @@
+<div *ngIf="!((workouts$ | async)?.length)">
+  There is no workouts! Add one to get started.
+</div>
+
+<div *ngFor="let workout of (workouts$ | async)">
+  {{workout.name}}
+</div>
