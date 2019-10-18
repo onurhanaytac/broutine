@@ -61,6 +61,67 @@
 						]
 					}
 				]
+			},
+			{
+				"id": 2,
+				"name": "Phul",
+				"description": "Some kind of workout 2",
+				"days": [
+					{
+						"id": 1,
+						"name": "Upper Power",
+						"exerciseItems": [
+							{
+								"id": 1,
+								"exercise": "Bench Press",
+								"sets": 5,
+								"reps": 5,
+								"groupNo": 0
+							},
+							{
+								"id": 2,
+								"exercise": "Incline Bench Press",
+								"sets": 5,
+								"reps": 5,
+								"groupNo": 1
+							},
+							{
+								"id": 3,
+								"exercise": "Decline Bench Press",
+								"sets": 5,
+								"reps": 5,
+								"groupNo": 2
+							}
+						]
+					},
+					{
+						"id": 2,
+						"name": "Lower Hyperthrophy",
+						"exerciseItems": [
+							{
+								"id": 1,
+								"exercise": "Leg Press",
+								"sets": 5,
+								"reps": 5,
+								"groupNo": 0
+							},
+							{
+								"id": 2,
+								"exercise": "Incline Leg Press",
+								"sets": 5,
+								"reps": 5,
+								"groupNo": 1
+							},
+							{
+								"id": 3,
+								"exercise": "Decline Leg Press",
+								"sets": 5,
+								"reps": 5,
+								"groupNo": 2
+							}
+						]
+					}
+				]
 			}
 		],
 		"post": {

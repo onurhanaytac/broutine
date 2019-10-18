@@ -33,7 +33,6 @@ export function reducer(state = initialState, action: fromWorkouts.WorkoutsActio
           ...state.entities
         }
       ); // action.payload.reduce
-      console.log(entities);
       return {
         ...state,
         loading: false,

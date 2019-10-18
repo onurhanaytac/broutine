@@ -5,17 +5,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-
 import { RoutinesModule } from '../routines/routines.module';
 
-import { StoreModule, MetaReducer } from '@ngrx/store';
+import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
+import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { reducers } from './store';
-
-export const metaReducers: MetaReducer<any>[] = [];
+import { reducers, CustomSerializer } from './store';
 
 // routes
-
 export const ROUTES: Routes = [
   {
     path: '',
@@ -25,19 +22,25 @@ export const ROUTES: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES),
     BrowserAnimationsModule,
     RoutinesModule,
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot([])
+    RouterModule.forRoot(ROUTES),
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    }),
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot()
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: RouterStateSerializer, useClass: CustomSerializer }
+  ],
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

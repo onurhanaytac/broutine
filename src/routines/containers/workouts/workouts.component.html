@@ -3,5 +3,7 @@
 </div>
 
 <div *ngFor="let workout of (workouts$ | async)">
-  {{workout.name}}
+  <a [routerLink]="['/workouts', workout.id]">
+    {{ workout.name }}
+  </a>
 </div>

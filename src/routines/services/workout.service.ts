@@ -12,6 +12,6 @@ export class WorkoutService {
   constructor(private http: HttpClient) { }
 
   getWorkouts(): Observable<Workout[]> {
-    return this.http.get<Workout[]>('http://127.0.0.1:8000/api/v1/workouts')
+    return this.http.get<Workout[]>('http://127.0.0.1:8000/api/v1/workouts');
   }
 }

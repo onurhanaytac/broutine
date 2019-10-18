@@ -9,14 +9,18 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { reducers, effects } from './store';
 
-// import * as fromComponents from './components';
+import * as fromComponents from './components';
 import * as fromContainers from './containers';
 
 export const ROUTES: Routes = [
   {
     path: 'workouts',
     component: fromContainers.WorkoutsComponent
-  }
+  },
+  {
+    path: 'workouts/:workoutId',
+    component: fromContainers.WorkoutComponent
+  },
 ];
 
 @NgModule({
@@ -29,7 +33,7 @@ export const ROUTES: Routes = [
     EffectsModule.forFeature(effects)
   ],
   providers: [ ],
-  declarations: [ ...fromContainers.containers ],
-  exports: [ ...fromContainers.containers ]
+  declarations: [ ...fromContainers.containers, ...fromComponents.components ],
+  exports: [ ...fromContainers.containers, ...fromComponents.components ]
 })
 export class RoutinesModule {}
