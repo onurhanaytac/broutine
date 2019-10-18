@@ -25,9 +25,7 @@ export class WorkoutComponent implements OnInit {
   ngOnInit() {
     this.workout$ = this.store.select(fromStore.getSelectedWorkout);
     this.workout$.subscribe(wo => {
-      console.log(wo);
       if (!wo) {
-        console.log('here');
         this.store.dispatch(new fromStore.LoadWorkouts());
       }
     });
