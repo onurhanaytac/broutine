@@ -1,25 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
+// application
 import { AppComponent } from './app.component';
 import { RoutinesModule } from '../routines/routines.module';
+import { AppRoutingModule } from './app-routing.module';
 
+// store
 import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, CustomSerializer } from './store';
 
-// routes
-export const ROUTES: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'workouts'
-  }
-];
+// material components
+import { materialComponents } from './app.material';
 
 @NgModule({
   imports: [
@@ -27,7 +23,8 @@ export const ROUTES: Routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     RoutinesModule,
-    RouterModule.forRoot(ROUTES),
+    AppRoutingModule,
+    ...materialComponents,
     StoreModule.forRoot(reducers, {
       runtimeChecks: {
         strictStateImmutability: true,
@@ -40,7 +37,7 @@ export const ROUTES: Routes = [
   providers: [
     { provide: RouterStateSerializer, useClass: CustomSerializer }
   ],
-  declarations: [ AppComponent ],
-  bootstrap: [ AppComponent ]
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

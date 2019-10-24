@@ -32,7 +32,6 @@ export const ROUTES: Routes = [
     StoreModule.forFeature('routines', reducers),
     EffectsModule.forFeature(effects)
   ],
-  providers: [ ],
   declarations: [ ...fromContainers.containers, ...fromComponents.components ],
   exports: [ ...fromContainers.containers, ...fromComponents.components ]
 })

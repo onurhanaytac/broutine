@@ -132,5 +132,60 @@
 				}
 			]
 		}
+	},
+	"/api/v1/exercises": {
+		"get": [
+			{
+				"id": 1,
+				"name": "Bench Press",
+				"targetMyscles": [
+					{
+						"name": "chest",
+						"group": "chest"
+					}
+				]
+			},
+			{
+				"id": 2,
+				"name": "Shoulder Press",
+				"targetMyscles": [
+					{
+						"name": "shoulder",
+						"group": "shoulder"
+					}
+				]
+			},
+			{
+				"id": 3,
+				"name": "Squat",
+				"targetMyscles": [
+					{
+						"name": "quads",
+						"group": "leg"
+					},
+					{
+						"name": "glutes",
+						"group": "leg"
+					}
+				]
+			}
+		]
+	},
+	"/api/v1/exercises/find-by-muscle-group?q=leg": {
+		"get": [
+			{
+				"name": "Squat",
+				"targetMyscles": [
+					{
+						"name": "quads",
+						"group": "leg"
+					},
+					{
+						"name": "glutes",
+						"group": "leg"
+					}
+				]
+			}
+		]
 	}
 }

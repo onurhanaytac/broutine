@@ -2,7 +2,7 @@ import * as fromWorkouts from '../actions/workouts.actions';
 import { Workout } from '../../models/workout.model';
 
 export interface WorkoutState {
-  entities: { [id: number]: Workout};
+  entities: { [id: number]: Workout };
   loaded: boolean;
   loading: boolean;
 }
@@ -23,7 +23,7 @@ export function reducer(state = initialState, action: fromWorkouts.WorkoutsActio
     }
     case fromWorkouts.LOAD_WORKOUTS_SUCCESS: {
       const entities = action.payload.reduce(
-        (entities: { [id: number]: Workout}, workout: Workout) => {
+        (entities: { [id: number]: Workout }, workout: Workout) => {
           return {
             ...entities,
             [workout.id]: workout
